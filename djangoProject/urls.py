@@ -18,5 +18,5 @@ from django.urls import include, path
 
 urlpatterns = [
     path('', include('sondages.urlsConf')),
-    path('admin/', admin.site.urls),
+    path('', admin.site.urls),
 ]
