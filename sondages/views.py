@@ -26,10 +26,10 @@ def detail(request, question_id):
         question = Question.objects.get(pk=question_id)
     except Question.DoesNotExist:
         raise Http404("Question does not exist")
-
     '''
     question = get_object_or_404(Question, pk=question_id)
-    return render(request, 'sondages/questions/detail.html', {'question': question})
+    choices = question.choice_set.all
+    return render(request, 'sondages/questions/detail.html', {'question': question, 'choices': choices})
 
 
 def results(request, question_id):
